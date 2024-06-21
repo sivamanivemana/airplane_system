@@ -1,8 +1,8 @@
 app_name = "airplane_mode"
 app_title = "Airplane Mode"
-app_publisher = "madhu"
+app_publisher = "Mohan"
 app_description = "app for airplane"
-app_email = "madhusudhan.m@promantia.com"
+app_email = "mohan.k@promantia"
 app_license = "mit"
 # required_apps = []
 
@@ -54,6 +54,10 @@ app_license = "mit"
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
+
+website_route_rules = [
+    {"from_route": "/show_me", "to_route": "show_me"}
+]
 
 # Jinja
 # ----------
@@ -123,33 +127,32 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
+#     "Airplane Ticket": {
+#         "before_submit":"airplane_mode.airplane_mode.doctype.airplane_ticket.airplane_ticket.validate_boarded_status"
+#     }
 # }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"airplane_mode.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"airplane_mode.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    # "all": [
+    # 	"airplane_mode.tasks.all"
+    # ],
+    # "daily": [
+    # 	"airplane_mode.tasks.daily"
+    # ],
+    # "hourly": [
+    # 	"airplane_mode.tasks.hourly"
+    # ],
+    # "weekly": [
+    # 	"airplane_mode.tasks.weekly"
+    # ],
+    "monthly": [
+        "airplane_mode.airport_shop_management.notification.rent_remainder.send_rent_reminder_emails"
+    ],
+}
+
 
 # Testing
 # -------
@@ -226,4 +229,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

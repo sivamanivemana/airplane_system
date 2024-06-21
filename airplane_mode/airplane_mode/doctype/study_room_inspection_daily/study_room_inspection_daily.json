@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-13 11:38:20.358119",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "checklist_inspection_section",
+  "inspect_study_room",
+  "all_staff_follows_sop",
+  "dusting_and_wiping_section",
+  "dust_all_surfaces",
+  "wipe_down_furniture_and_study_materials",
+  "floor_cleaning_section",
+  "sweep_or_vacuum",
+  "mop_the_floor_using_a_mild_disinfectant",
+  "windows_and_curtains_section",
+  "clean_window_glass_and_frames",
+  "dust_or_wash_curtains",
+  "restocking_supplies_section",
+  "check_and_refill_stationery_supplies"
+ ],
+ "fields": [
+  {
+   "fieldname": "checklist_inspection_section",
+   "fieldtype": "Section Break",
+   "label": "Checklist Inspection"
+  },
+  {
+   "default": "0",
+   "fieldname": "inspect_study_room",
+   "fieldtype": "Check",
+   "label": "Inspect Study Room"
+  },
+  {
+   "default": "0",
+   "fieldname": "all_staff_follows_sop",
+   "fieldtype": "Check",
+   "label": "All Staff Follows Sop"
+  },
+  {
+   "fieldname": "dusting_and_wiping_section",
+   "fieldtype": "Section Break",
+   "label": "Dusting And Wiping"
+  },
+  {
+   "default": "0",
+   "description": "Including Desks, Chairs and Shelves",
+   "fieldname": "dust_all_surfaces",
+   "fieldtype": "Check",
+   "label": "Dust All Surfaces"
+  },
+  {
+   "default": "0",
+   "fieldname": "wipe_down_furniture_and_study_materials",
+   "fieldtype": "Check",
+   "label": "Wipe Down Furniture And Study Materials"
+  },
+  {
+   "fieldname": "floor_cleaning_section",
+   "fieldtype": "Section Break",
+   "label": "Floor Cleaning"
+  },
+  {
+   "default": "0",
+   "fieldname": "sweep_or_vacuum",
+   "fieldtype": "Check",
+   "label": "Sweep or Vacuum"
+  },
+  {
+   "default": "0",
+   "fieldname": "mop_the_floor_using_a_mild_disinfectant",
+   "fieldtype": "Check",
+   "label": "Mop The Floor Using a Mild Disinfectant"
+  },
+  {
+   "fieldname": "windows_and_curtains_section",
+   "fieldtype": "Section Break",
+   "label": "Windows and Curtains"
+  },
+  {
+   "default": "0",
+   "fieldname": "clean_window_glass_and_frames",
+   "fieldtype": "Check",
+   "label": "Clean Window Glass and Frames"
+  },
+  {
+   "default": "0",
+   "fieldname": "dust_or_wash_curtains",
+   "fieldtype": "Check",
+   "label": "Dust or Wash Curtains"
+  },
+  {
+   "fieldname": "restocking_supplies_section",
+   "fieldtype": "Section Break",
+   "label": "Restocking Supplies"
+  },
+  {
+   "default": "0",
+   "description": "Pens, Pencils, Notebooks Ensure adequate lighting (replace bulbs if needed)",
+   "fieldname": "check_and_refill_stationery_supplies",
+   "fieldtype": "Check",
+   "label": "Check and Refill Stationery Supplies"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-13 11:50:27.395851",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Study Room Inspection Daily",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

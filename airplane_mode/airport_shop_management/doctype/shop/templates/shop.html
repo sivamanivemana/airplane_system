@@ -1,0 +1,15 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<nav>
+    <a href="/shop" style="color: red;">Go Back</a>
+</nav>
+<h3 style="color: blue;">Shop Details</h3>
+<ul>
+    <li>Shop Number: {{doc.shop_number}}</li>
+    <li>Area:{{doc.area}}</li>
+    <li>Airport: {{doc.airport}}</li>
+    <li>Price: <span style="color: green;">{{doc.price}}</span></li>
+</ul>
+<a href="/book-shop/new?shop={{doc.name}}">Book Shop</a>
+{% endblock %}
