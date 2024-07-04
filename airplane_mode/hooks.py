@@ -1,8 +1,8 @@
 app_name = "airplane_mode"
 app_title = "Airplane Mode"
-app_publisher = "Mohan"
+app_publisher = "sivamani"
 app_description = "app for airplane"
-app_email = "mohan.k@promantia"
+app_email = "sivamani.k@promantia"
 app_license = "mit"
 # required_apps = []
 

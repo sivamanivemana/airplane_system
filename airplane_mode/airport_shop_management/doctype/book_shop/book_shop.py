@@ -1,4 +1,4 @@
-# Copyright (c) 2024, Mohan and contributors
+# Copyright (c) 2024, sivamani and contributors
 # For license information, please see license.txt
 
 import frappe
@@ -9,6 +9,7 @@ class BookShop(Document):
     def before_insert(self):
         frappe.db.set_value("Shop", self.shop, "status", "Booked")
 
+    def after_insert(self):
         # Create a new Tenant document
         tenant_doc = frappe.get_doc({
             "doctype": "Tenant",
@@ -19,15 +20,16 @@ class BookShop(Document):
         })
         tenant_doc.insert()
         frappe.enqueue(
-            update_reference, doc=tenant_doc, queue="long", enqueue_after_commit=True
+            update_reference, doc=tenant_doc, shop=self.shop, queue="long", enqueue_after_commit=True
         )
 
 
-def update_reference(doc):
+def update_reference(doc, shop=None):
     try:
-        if doc.shop:
-            frappe.db.set_value("Shop", doc.shop, "booked_reference", doc.name)
+        if shop:
+            frappe.db.set_value("Shop", shop, "booked_reference", doc.name)
         frappe.db.set_value("Tenant", doc.name, "booked_reference", doc.name)
     except Exception as e:
         frappe.log_error(
-            f"An error occurred while updating book reference {doc.name}: {str(e)}")
+            f"An error occurred while updating book reference {doc.name}: {str(e)}"
+        )
