@@ -66,7 +66,7 @@ def get_conditions(filters):
 def get_chart(data):
     airports = list(set(d["airport"] for d in data))
     available_counts = [d["count"] for d in data if d["status"] == "Available"]
-    _counts = [d["count"] for d in data if d["status"] == "Taken"]
+    taken_counts = [d["count"] for d in data if d["status"] == "Taken"]
 
     chart = {
         "data": {
@@ -78,7 +78,7 @@ def get_chart(data):
                 },
                 {
                     "name": "Taken",
-                    "values": Taken_counts,
+                    "values": taken_counts,
                 }
             ]
         },
