@@ -25,7 +25,7 @@ def get_columns(filters):
             "fieldname": "status",
             "fieldtype": "Select",
             "label": "Status",
-            "options": "Available/Occupied",
+            "options": "Available/Taken",
             "width": 150
         },
         {
@@ -66,7 +66,7 @@ def get_conditions(filters):
 def get_chart(data):
     airports = list(set(d["airport"] for d in data))
     available_counts = [d["count"] for d in data if d["status"] == "Available"]
-    occupied_counts = [d["count"] for d in data if d["status"] == "Occupied"]
+    _counts = [d["count"] for d in data if d["status"] == "Taken"]
 
     chart = {
         "data": {
@@ -77,8 +77,8 @@ def get_chart(data):
                     "values": available_counts,
                 },
                 {
-                    "name": "Occupied",
-                    "values": occupied_counts,
+                    "name": "Taken",
+                    "values": Taken_counts,
                 }
             ]
         },

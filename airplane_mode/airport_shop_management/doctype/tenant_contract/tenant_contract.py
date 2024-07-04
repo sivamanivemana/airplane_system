@@ -12,12 +12,12 @@ class TenantContract(Document):
         get_due_date(self.payment_due_date_of_every_month)
 
     def on_submit(self):
-        frappe.db.set_value("Shop", self.shop, "status", "Occupied")
+        frappe.db.set_value("Shop", self.shop, "status", "Taken")
 
     def validate(self):
         shop_status = frappe.db.get_value("Shop", self.shop, "status")
-        if shop_status == "Occupied":
-            frappe.throw("Shop was already occupied.")
+        if shop_status == "Taken":
+            frappe.throw("Shop was already Taken.")
 
 
 @frappe.whitelist()

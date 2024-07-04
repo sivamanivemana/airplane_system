@@ -13,7 +13,7 @@ frappe.query_reports["Shop Summary"] = {
 			"fieldname": "status",
 			"label": __("Status"),
 			"fieldtype": "Select",
-			"options": ["", "Available", "Occupied"]
+			"options": ["", "Available", "Taken"]
 		},
 	],
 	// formatter: (value, row, column, data, default_formatter) => {
@@ -21,7 +21,7 @@ frappe.query_reports["Shop Summary"] = {
 	// 	if (column.fieldname === "status" && data.status && data.status == "Available") {
 	// 		value = `<div style="color:green">${value}</div>`;
 	// 	}
-	// 	else if (column.fieldname === "report_status" && data.status && data.status == "Occupied") {
+	// 	else if (column.fieldname === "report_status" && data.status && data.status == "Taken") {
 	// 		value = `<div style="color:grey">${value}</div>`;
 	// 	}
 	// 	return value;
