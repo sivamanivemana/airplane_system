@@ -2,7 +2,7 @@
  "actions": [],
  "allow_guest_to_view": 1,
  "allow_rename": 1,
- "autoname": "format:{area}-{shop_number}",
+ "autoname": "format:{shop_name}-{shop_number}",
  "creation": "2024-06-14 17:37:55.366604",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -17,7 +17,9 @@
   "is_published",
   "route",
   "amended_from",
-  "shop_image"
+  "shop_image",
+  "reference_section",
+  "booked_reference"
  ],
  "fields": [
   {
@@ -48,10 +50,12 @@
    "reqd": 1
   },
   {
+   "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nOccupied\nAvailable",
+   "options": "\nOccupied\nAvailable\nBooked",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -90,6 +94,18 @@
    "label": "Price",
    "non_negative": 1,
    "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "booked_reference",
+   "fieldtype": "Link",
+   "label": "Booked Reference",
+   "options": "Book Shop"
   }
  ],
  "has_web_view": 1,
@@ -102,7 +118,7 @@
    "link_fieldname": "shop"
   }
  ],
- "modified": "2024-06-18 23:42:24.248438",
+ "modified": "2024-06-21 18:41:55.628056",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",

@@ -47,6 +47,7 @@
   },
   {
    "allow_on_submit": 1,
+   "default": "1",
    "fieldname": "payment_due_date_of_every_month",
    "fieldtype": "Int",
    "hidden": 1,
@@ -86,7 +87,7 @@
    "link_fieldname": "tenant"
   }
  ],
- "modified": "2024-06-21 00:21:12.729630",
+ "modified": "2024-06-22 16:05:39.775177",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Tenant Contract",

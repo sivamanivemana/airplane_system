@@ -33,3 +33,12 @@ def get_due_date(payment_due_day):
         due_date = datetime(year, month, 1) + relativedelta(months=1, days=-1)
 
     return str(due_date)
+
+
+@frappe.whitelist()
+def set_shop(tenant):
+    tenant_doc = frappe.get_doc("Tenant", tenant)
+    shop = frappe.db.get_value(
+        "Book Shop", {"full_name": tenant_doc.name}, "shop")
+
+    return shop

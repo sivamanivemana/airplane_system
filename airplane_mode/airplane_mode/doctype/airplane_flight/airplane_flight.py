@@ -16,8 +16,8 @@ class AirplaneFlight(WebsiteGenerator):
 def change_gate_no(doc, new_gate_no):
     doc = json.loads(doc)
     new_gate_no = json.loads(new_gate_no)
-    all_tickets_related_to_flight = frappe.db.get_all("Airplane Ticket", filters={
-                                                      "flight": doc.get('name')}, fields=["name"])
+    all_tickets_related_to_flight = frappe.db.get_all(
+        "Airplane Ticket", filters={"flight": doc.get('name')}, fields=["name"])
     if all_tickets_related_to_flight:
         for ticket in all_tickets_related_to_flight:
             frappe.db.set_value("Airplane Ticket", ticket.name,

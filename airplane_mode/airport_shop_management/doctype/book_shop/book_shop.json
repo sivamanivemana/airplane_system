@@ -1,26 +1,22 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:full_name",
  "creation": "2024-06-21 01:04:27.054181",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "full_name",
   "shop",
   "email",
-  "phone"
+  "phone",
+  "address"
  ],
  "fields": [
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name",
-   "reqd": 1
-  },
-  {
    "fieldname": "shop",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Shop",
    "options": "Shop"
   },
@@ -33,18 +29,32 @@
   },
   {
    "fieldname": "phone",
-   "fieldtype": "Int",
+   "fieldtype": "Phone",
    "in_list_view": 1,
    "label": "Phone",
    "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 01:14:43.804438",
+ "modified": "2024-07-03 14:29:14.286216",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Book Shop",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

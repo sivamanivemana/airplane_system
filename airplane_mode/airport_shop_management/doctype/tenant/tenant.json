@@ -8,8 +8,11 @@
  "field_order": [
   "tenant_name",
   "email",
+  "column_break_ubby",
   "phone",
-  "address"
+  "address",
+  "reference_section",
+  "booked_reference"
  ],
  "fields": [
   {
@@ -35,6 +38,21 @@
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Address"
+  },
+  {
+   "fieldname": "column_break_ubby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "booked_reference",
+   "fieldtype": "Link",
+   "label": "Booked Reference",
+   "options": "Book Shop"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -44,7 +62,7 @@
    "link_fieldname": "tenant"
   }
  ],
- "modified": "2024-06-14 18:13:09.105328",
+ "modified": "2024-06-21 12:07:38.876770",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Tenant",
