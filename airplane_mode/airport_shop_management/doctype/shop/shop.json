@@ -54,7 +54,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nOccupied\nAvailable\nBooked",
+   "options": "\nTaken\nAvailable\nBooked",
    "read_only": 1,
    "reqd": 1
   },
@@ -118,7 +118,7 @@
    "link_fieldname": "shop"
   }
  ],
- "modified": "2024-06-21 18:41:55.628056",
+ "modified": "2024-07-04 15:51:05.271619",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
